@@ -47,8 +47,8 @@ export default class myapp extends Component {
         // </View>
     )
   }
-};
+}
 
 
-AppRegistry.registerComponent('myapp' ,  () => app)
+AppRegistry.registerComponent('myapp' ,  () => myapp)
 
