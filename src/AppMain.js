@@ -1,7 +1,5 @@
-import {AppRegistry, View} from 'react-native'
-// import app from './src/AppMain';
 import React , { Component } from 'react';
-import Login from './src/Components/Login';
+// import Login from './Components/Login';
 
 
 
@@ -30,25 +28,18 @@ export default class myapp extends Component {
 
     const article = this.state.article;
     return (
-      <>
-      <Login></Login>
-      </>
         // <ScrollView>
         //   <Article Text={article[1].body} image={article[1].imageUrl} />
         //   <Article Text={article[2].body} image={article[2].imageUrl} />
         // </ScrollView>
-        // <View style={styles.container2}> 
-        //   <View style={styles.box1}></View>
-        //   <View style={styles.box2}></View>
-        //   <View style={styles.box3}></View>
-        //   <View style={styles.box4}></View>
-        //   <View style={styles.box5}></View>
-        //   <View style={styles.box6}></View>
-        // </View>
+        <View style={styles.container2}> 
+          <View style={styles.box1}></View>
+          <View style={styles.box2}></View>
+          <View style={styles.box3}></View>
+          <View style={styles.box4}></View>
+          <View style={styles.box5}></View>
+          <View style={styles.box6}></View>
+        </View>
     )
   }
 };
-
-
-AppRegistry.registerComponent('myapp' ,  () => app)
-
