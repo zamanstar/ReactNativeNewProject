@@ -15,7 +15,12 @@ const styles = StyleSheet.create({
         height : 150,
        flex : 1,
        marginRight: 50,
-       marginLeft: 50
+       marginLeft: 50,
+       borderRadius : 5,
+       elevation:2,
+       shadowColor: 'black',
+       shadowOffset : {with : 0 , height:2},
+       shadowOpacity : 1
     }
   });
 
