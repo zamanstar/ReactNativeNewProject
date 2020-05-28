@@ -20,7 +20,15 @@ const styles = StyleSheet.create({
        elevation:2,
        shadowColor: 'black',
        shadowOffset : {with : 0 , height:2},
-       shadowOpacity : 1
+       shadowOpacity : .1
+    },
+    loginTitle : {
+      margin : 2,
+      textAlign : 'center',
+      fontSize : 18,
+      paddingTop : 10
+
+
     }
   });
 
