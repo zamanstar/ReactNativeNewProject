@@ -2,6 +2,8 @@ import {AppRegistry, View} from 'react-native'
 // import app from './src/AppMain';
 import React , { Component } from 'react';
 import Login from './src/Components/Login';
+import * as Font from 'expo-font';
+import {AppLoading} from 'expo';
 
 
 
@@ -12,24 +14,34 @@ export default class myapp extends Component {
     super()
 
     this.state = {
-      article : {
-        1:{
-          imageUrl : { uri : 'https://roocket.ir/public/images/2020/3/4/1583305013laravel-poster-1.png'},
-          body : 'node یک پلتفرم است که به شما اجازه میدهد از جاوااسکریپت سمت سرور برای ایجاد کردن اپلیکیشن‌های وب خود استفاده کنیدآشنایی با امکانات جدید لاراول '
-        },
-        2:{
-          imageUrl : { uri : 'https://roocket.ir/public/images/2020/1/29/laravel-projects-2.png'},
-          body : 'لاراول یکی از محبوب‌ترین فریمورک‌های PHP در ایران و جهان به شمار می‌آید، که ما تصمیم داریم در این دوره در قالب یک پروژه آن را به شکل حرفه‌ای و کاربردی... '
-        }
-    
-      }
+    dataLoaded : false
     }
   }
 
-  render() {
+  fetchFonts() {
+    console.log('hi2');
+    return Font.loadAsync({
+      'IRANSansMobile-bold': require('./src/assets/Font/IRANSansMobile_Bold.ttf'),
+      'IRANSansMobile-Light': require('./src/assets/Font/IRANSansMobile_Light.ttf'),
+      'IRANSansMobile-Medium': require('./src/assets/Font/IRANSansMobile_Medium.ttf'),
+      'IRANSansMobile-UltraLight': require('./src/assets/Font/IRANSansMobile_UltraLight.ttf'),
+      'IRANSansMobile': require('./src/assets/Font/IRANSansMobile.ttf'),
 
-    const article = this.state.article;
-    return (
+      });
+  }
+
+  render() {
+      const dataLoaded = this.state.dataLoaded;
+    if(!dataLoaded){
+      console.log('hi');
+      return(
+        <AppLoading
+        startAsync = {this.fetchFonts}
+        onFinish = {() => this.setState({dataLoaded : true})}
+        />
+      )
+    }
+      return (
       <>
       <Login></Login>
       </>
