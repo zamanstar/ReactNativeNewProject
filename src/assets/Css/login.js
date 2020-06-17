@@ -1,18 +1,20 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 
 const styles = StyleSheet.create({
    
     container : {
-        flex : 1,
-        backgroundColor : '#74b9ff',
-        justifyContent : 'center',
-        alignItems:'center',
-        flexDirection : 'row'
+      flex : 1,
+    },
+    main : {
+      flex : 1,  
+      justifyContent : 'center',
+      alignItems:'center',
+      flexDirection : 'row'
     },
     loginBox : {
        backgroundColor : '#fff' ,
       // width : 150,
-        height : 300,
+        height : 350,
        flex : 1,
        marginRight: 50,
        marginLeft: 50,
@@ -38,21 +40,33 @@ const styles = StyleSheet.create({
       marginLeft:20
     },
     labelText : {
+      fontFamily:'IRANSansMobile-Medium',
       textAlign : 'right',
       marginBottom : 5,
       margin :10,
       color : '#5256c9',
+      ...Platform.select({
+        ios : {
+          fontFamily:'IRANSansMobile',
+          fontWeight : '500'
+        } ,
+        android : {
+          fontFamily:'IRANSansMobile-Medium',
+        }
+      }),
       fontWeight : 'bold'
     },
     inputText : {
+      fontFamily:'IRANSansMobile-Light',
       textAlign : 'right',
       borderColor : 'rgba(0,0,0,.1)',
       borderWidth : 1,
-      padding : 10,
-      fontFamily:'IRANSansMobile-bold'
+      padding : 10
+   
 
     },
     loginButton:{
+      fontFamily : 'IRANSansMobile',
       marginRight :25,
       marginLeft : 25,
       backgroundColor : '#426bd7',
@@ -76,6 +90,7 @@ const styles = StyleSheet.create({
       
     } ,
     forgetPassword:{
+      fontFamily : 'IRANSansMobile',
       textAlign : 'center',
       marginTop : 15
     }
